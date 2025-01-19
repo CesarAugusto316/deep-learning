@@ -1,0 +1,121 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM3srKVii8kz6W/ijSob9kW",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/CesarAugusto316/deep-learning/blob/main/min_maxipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 13,
+      "metadata": {
+        "id": "nNUMHhCdj0p9"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "import torch"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# vector\n",
+        "v= np.array([0.2, 0.1, 0.7, 0.4, 0.9])\n",
+        "\n",
+        "minval = np.min(v)\n",
+        "maxval = np.max(v)\n",
+        "print('Min,max: %g,%g' % (minval, maxval))\n",
+        "\n",
+        "# argmin/max\n",
+        "minidx = np.argmin(v)\n",
+        "maxidx = np.argmax(v)\n",
+        "print('Min,max indices: %g,%g' % (minidx, maxidx))\n"
+      ],
+      "metadata": {
+        "id": "8htiCzNB7vke",
+        "outputId": "daad70d6-acec-485a-c929-7b84fddac119",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Min,max: 0.1,0.9\n",
+            "Min,max indices: 1,4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# matrix\n",
+        "M = np.array([\n",
+        "    [0.9, 0.8, 0.3],\n",
+        "    [0.1, 0.3, 0.4]\n",
+        "])\n",
+        "\n",
+        "minval1 = np.min(M)   # minimum from the entire matrix\n",
+        "minval2 = np.min(M, axis=0)   # minimum of each column\n",
+        "minval3 = np.min(M, axis=1)   # minimum of each row\n",
+        "\n",
+        "\n",
+        "maxval = np.max(M)\n",
+        "# print('Min,max: %g,%g' % (minval1, minval2))\n",
+        "print('Min,max: %g,%g' % (minval, maxval))"
+      ],
+      "metadata": {
+        "id": "Fz4gWWwp7vhF",
+        "outputId": "353fc711-4642-48ad-dcfb-8f5b518128af",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Min,max: 0.1,0.9\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "f8n9NJ_X7vXJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
